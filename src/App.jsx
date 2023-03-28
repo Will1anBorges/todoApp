@@ -13,7 +13,7 @@ const getLocalItems = () => {
   if (list) {
       return JSON.parse(localStorage.getItem('lists'));
   } else {
-    [];
+    ['{"lists":"teste"}'];
   }
 }
 
@@ -106,7 +106,7 @@ useEffect(() => {
       </Flex>
       <Spacer/>
       <ul>
-        {Object.keys(listTask).map((task) => (
+        {listTask.map((task) => (
         <>
           <Item checked={task.checked} key= {task.id}>
             <p>{task.task}</p>
