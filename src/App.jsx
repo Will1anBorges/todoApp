@@ -13,7 +13,7 @@ const getLocalItems = () => {
   if (list) {
       return JSON.parse(localStorage.getItem('lists'));
   } else {
-    ['{"lists":"teste"}'];
+    ['{"lists":"[]"}'];
   }
 }
 
