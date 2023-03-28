@@ -121,10 +121,7 @@ useEffect(() => {
           </Item>
           <Spacer margin="10px"/>
         </>
-        ))}
-        
-        <Spacer margin="12px"/>
-        
+        ))}  
       </ul>
     </Container>
   )
