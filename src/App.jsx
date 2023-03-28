@@ -4,22 +4,11 @@ import { Title , Input, Button, Flex, Container, Spacer, Item, Emoji} from './st
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 
-  
 
-const getLocalItems = () => {
-  let list = localStorage.getItem('lists');
-  console.log(list);
-
-  if (list) {
-      return JSON.parse(localStorage.getItem('lists'));
-  } else {
-    ['{"lists":"[]"}'];
-  }
-}
 
 function App() {
   const [task, setTask] = useState('');
-  const [listTask, setListTask] = useState(getLocalItems());
+  const [listTask, setListTask] = useState([]);
 
 const addTask = () => {
   if(!task) return toast.error('Digite uma tarefa!', {
@@ -85,10 +74,6 @@ const toggleChecked = (id, checked) => {
     ;
 
   }
-  
-useEffect(() => {
-  localStorage.setItem('lists', JSON.stringify(listTask))
-}, [listTask]);
 
   return (
     <Container>
@@ -106,7 +91,7 @@ useEffect(() => {
       </Flex>
       <Spacer/>
       <ul>
-        {Object.keys(listTask).map((task) => (
+        {listTask.map((task) => (
         <>
           <Item checked={task.checked} key= {task.id}>
             <p>{task.task}</p>
