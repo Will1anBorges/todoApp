@@ -106,7 +106,7 @@ useEffect(() => {
       </Flex>
       <Spacer/>
       <ul>
-        {listTask.map((task) => (
+        {Object.keys(listTask).map((task) => (
         <>
           <Item checked={task.checked} key= {task.id}>
             <p>{task.task}</p>
