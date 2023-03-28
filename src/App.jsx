@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 
   
+
 const getLocalItems = () => {
   let list = localStorage.getItem('lists');
   console.log(list);
